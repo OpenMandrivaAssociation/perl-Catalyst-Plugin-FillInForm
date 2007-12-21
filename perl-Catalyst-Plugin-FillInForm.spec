@@ -11,6 +11,7 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Source:		http://search.cpan.org/CPAN/authors/id/M/MR/MRAMBERG/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}/
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 %if %{mdkversion} < 1010
 Buildrequires:	perl-devel
 %else
