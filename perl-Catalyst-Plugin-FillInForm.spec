@@ -1,21 +1,21 @@
-%define module	Catalyst-Plugin-FillInForm
-%define name	perl-%{module}
-%define version 0.10
-%define release %mkrel 1
+%define upstream_name	 Catalyst-Plugin-FillInForm
+%define upstream_version 0.12
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
 Summary:	FillInForm for Catalyst
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/M/MR/MRAMBERG/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}/
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Catalyst) >= 2.99
 BuildRequires:	perl(Catalyst::Action::RenderView)
 BuildRequires:	perl(HTML::FillInForm)
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Fill forms automatically, based on data from a previous HTML
@@ -36,7 +36,7 @@ e.g. directly from your database.
 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor <<EOF
