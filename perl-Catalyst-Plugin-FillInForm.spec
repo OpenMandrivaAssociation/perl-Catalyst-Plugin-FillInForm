@@ -1,15 +1,13 @@
 %define upstream_name	 Catalyst-Plugin-FillInForm
-%define upstream_version 0.12
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.12
+Release:	7
 
 Summary:	FillInForm for Catalyst
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Catalyst-Plugin-FillInForm
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -37,7 +35,7 @@ e.g. directly from your database.
 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor <<EOF
@@ -64,8 +62,7 @@ make test
 * Sun Jul 12 2009 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-1mdv2011.0
 + Revision: 395091
 - update to 0.12
-- using %%perl_convert_version
-- fixed license field
+- using %0.12 fixed license field
 
 * Sun Jan 04 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.10-1mdv2009.1
 + Revision: 324467
